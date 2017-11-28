@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Menú</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      prec = new Array(6);
+      for (var i = 0; i <=6; i++) {
+        var z = i+1;
+        prec[i] = parseInt(prompt("Ingresa el precio del platillo "+z));
+      }
+    </script>
+    <p>
+      <table>
+              <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Platillo 1</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[0]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant1" id="cant1" value="0" min="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Platillo 2</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[1]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant2" id="cant2" min="0" value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Platillo 3</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[2]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant3" id="cant3" min="0" value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Platillo 5</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[3]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant4" id="cant4" min="0" value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Platillo 5</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[4]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant5" id="cant5" min="0" value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Platillo 6</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[5]);
+                  </script> </td>
+                  <td>
+                    <input type="number" name="cant6" id="cant6" min="0" value="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Platillo 7</td>
+                  <td> $<script type="text/javascript">
+                    document.writeln(prec[6]);
+                  </script> </td>
+                  <td>
+                    <input type="text" name="cant7" id="cant7" min="0" value="0">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button name="action" onclick="scrip()">Envíar</button>
+            <button name="acc" onclick="termina()">Terminar</button>
+
+    </p>
+    <script type="text/javascript">
+      cont = 0;
+      dia = 0;
+      cant = new Array(6);
+      function scrip(){
+        cont++;
+        cant[0] = parseInt(document.getElementById('cant1').value)*prec[0];
+        cant[1] = parseInt(document.getElementById('cant2').value)*prec[1];
+        cant[2] = parseInt(document.getElementById('cant3').value)*prec[2];
+        cant[3] = parseInt(document.getElementById('cant4').value)*prec[3];
+        cant[4] = parseInt(document.getElementById('cant5').value)*prec[4];
+        cant[5] = parseInt(document.getElementById('cant6').value)*prec[5];
+        cant[6] = parseInt(document.getElementById('cant7').value)*prec[6];
+        total = 0;
+        for (var y = 0; y <= 6; y++) {
+          total += cant[y];
+        }
+        dia+= total;
+        alert("El total a pagar es "+total);
+        alert("El número de factura es "+cont);
+      }
+    </script>
+    <script type="text/javascript">
+    function termina(){
+      alert("El total vendido del día es "+dia);
+    }
+    </script>
+  </body>
+</html>
